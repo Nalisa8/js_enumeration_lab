@@ -1,4 +1,4 @@
-const EnumLibrary = require('../enumeration_library.js');
+const EnumerationLibrary = require('../enumeration_library.js');
 const assert = require('assert');
 
 describe('My Enumeration Library', function() {
@@ -51,10 +51,10 @@ describe('My Enumeration Library', function() {
     };
 
     films = [moonlight, bladeRunner, dunkirk, blackPanther, trainspotting];
-    myEnumLib = new EnumLibrary(films);
+    myEnumLib = new EnumerationLibrary(films);
   });
 
-  xit('should be able to find an item in an array (by movie title)', function() {
+  it('should be able to find an item in an array (by movie title)', function() {
     const findByTitle = (film) => {
       return film.title === "Moonlight";
     }
@@ -63,7 +63,7 @@ describe('My Enumeration Library', function() {
     assert.deepStrictEqual(actualFoundFilm, moonlight);
   })
 
-  xit('should be able to map an array (decrease prices by 50%)', function() {
+  it('should be able to map an array (decrease prices by 50%)', function() {
     const decreaseByFiftyPercent = (film) => {
       film.price = film.price * 0.5;
       return film;
@@ -111,7 +111,7 @@ describe('My Enumeration Library', function() {
     assert.deepStrictEqual(actualDecreasedFilms, expectedDecreasedFilms);
   });
 
-  xit('should be able to filter an array (by genre)', function() {
+  it('should be able to filter an array (by genre)', function() {
     const findByGenre = (film) => {
       if (film.genre === "Drama") return film;
     }
